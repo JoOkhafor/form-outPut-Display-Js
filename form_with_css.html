@@ -83,7 +83,7 @@
             margin-top: 20px
         }
 
-        .submitRow button{
+        .submitRow input{
             background-color: #6BA2CE;
             color: #fff;
             height: 40px;
@@ -95,7 +95,7 @@
             
         }
 
-        .submitRow button:hover{
+        .submitRow input:hover{
             background-color: rgb(54, 76, 177);
             transition: ease;
             
@@ -105,6 +105,9 @@
            height: auto;
            margin-bottom: 15px;
         }
+        #Output {
+            text-align: center;
+        }
 
     </style>
 
@@ -112,33 +115,30 @@
 <body>
 
     <h1>Formulaire DWWM</h1>
-    <form>
-        
-         <div class="row">
-             <div class="labelRow">
-                <label>Nom</label>
-            </div>
-             <div class="inputRow">
-                <input type="text" id="name" placeholder="Entrez votre nom">
-             </div>
-         </div>
-
-
+   <form id="form_wrap">
         <div class="row">
-             <div class="labelRow">
-                 <label>Email</label>
-            </div>
-           <div class="inputRow">
-                 <input type="email" id="email" placeholder="Entrez votre email">
-           </div>
+            <div class="labelRow">
+            <label>Nom</label>
         </div>
-
+            <div class="inputRow">
+            <input type="text" id="name" name="name" placeholder="Entrez votre nom">
+            </div>
+        </div>
         <div class="row">
+            <div class="labelRow">
+                <label>Email</label>
+           </div>
+          <div class="inputRow">
+                <input type="email" id="email" name="email" placeholder="Entrez votre email">
+          </div>
+       </div>
+
+         <div class="row">
              <div class="labelRow">
                  <label>Indiquez votre satisfaction de 1 à 10</label>
             </div>
            <div class="inputRow">
-                <input type="number" id="satisfaction" placeholder="Numéro de 1 à 10">
+                <input type="number" id="satisfaction" name="satisfaction" placeholder="Numéro de 1 à 10">
            </div>
         </div>
 
@@ -148,7 +148,7 @@
                  <label>Qui nest votre coach</label>
             </div>
             <div class="inputRow ">
-                <select id="coach">
+                <select id="coach" name="coach">
                     <option>Birante</option>
                     <option>Malick Ba</option>
                     <option>Mamadou</option>
@@ -161,19 +161,19 @@
                 <label for="">Décrivez votre expérience jusque là</label>
             </div>
             <div class="inputRow">
-                <textarea id="message" cols="30" rows="5" placeholder="Décrivez votre expérience ici"></textarea>
+                <textarea id="message" name="message" cols="30" rows="5" placeholder="Décrivez votre expérience ici"></textarea>
             </div>
         </div>
-
+        
         <div class="submitRow">
-            <input type="button" value="Submit" id="btnSubmit" onclick="displayInput()">
-        </div>
+            <input class="validate" value="validate" type="submit" onclick="displayInput()">
+       </div>
+        
 
-
+        <div id="Output"></div>
     </form>
 
-   
-
+    <script src="script.js"></script>
     
 </body>
 </html>
